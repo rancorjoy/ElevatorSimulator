@@ -1,0 +1,111 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Agent_blue.png" />
+    <None Remove="Assets\Agent_green.png" />
+    <None Remove="Assets\Agent_magenta.png" />
+    <None Remove="Assets\Agent_mint.png" />
+    <None Remove="Assets\Agent_orange.png" />
+    <None Remove="Assets\Agent_pink.png" />
+    <None Remove="Assets\Agent_red.png" />
+    <None Remove="Assets\Agent_salmon.png" />
+    <None Remove="Assets\Agent_teal.png" />
+    <None Remove="Assets\Agent_violet.png" />
+    <None Remove="Assets\button_l_act_down.png" />
+    <None Remove="Assets\button_l_act_up.png" />
+    <None Remove="Assets\button_l_both.png" />
+    <None Remove="Assets\button_l_down.png" />
+    <None Remove="Assets\button_l_up.png" />
+    <None Remove="Assets\button_r_act_down.png" />
+    <None Remove="Assets\button_r_act_up.png" />
+    <None Remove="Assets\button_r_both.png" />
+    <None Remove="Assets\button_r_down.png" />
+    <None Remove="Assets\button_r_up.png" />
+    <None Remove="Assets\car.png" />
+    <None Remove="Assets\car_back.png" />
+    <None Remove="Assets\car_front.png" />
+    <None Remove="Assets\car_top.png" />
+    <None Remove="Assets\door_left.png" />
+    <None Remove="Assets\door_right.png" />
+    <None Remove="Assets\door_slider.png" />
+    <None Remove="Assets\empty.png" />
+    <None Remove="Assets\floor_back.png" />
+    <None Remove="Assets\floor_front.png" />
+    <None Remove="Assets\frame.png" />
+    <None Remove="Assets\service_back.png" />
+    <None Remove="Assets\seven_seg_0.png" />
+    <None Remove="Assets\seven_seg_1.png" />
+    <None Remove="Assets\seven_seg_2.png" />
+    <None Remove="Assets\seven_seg_3.png" />
+    <None Remove="Assets\seven_seg_4.png" />
+    <None Remove="Assets\seven_seg_5.png" />
+    <None Remove="Assets\seven_seg_6.png" />
+    <None Remove="Assets\seven_seg_7.png" />
+    <None Remove="Assets\seven_seg_8.png" />
+    <None Remove="Assets\seven_seg_9.png" />
+    <None Remove="Assets\top_act_down.png" />
+    <None Remove="Assets\top_act_up.png" />
+    <None Remove="Assets\wall.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Agent_blue.png" />
+    <Resource Include="Assets\Agent_green.png" />
+    <Resource Include="Assets\Agent_magenta.png" />
+    <Resource Include="Assets\Agent_mint.png" />
+    <Resource Include="Assets\Agent_orange.png" />
+    <Resource Include="Assets\Agent_pink.png" />
+    <Resource Include="Assets\Agent_red.png" />
+    <Resource Include="Assets\Agent_salmon.png" />
+    <Resource Include="Assets\Agent_teal.png" />
+    <Resource Include="Assets\Agent_violet.png" />
+    <Resource Include="Assets\button_l_act_down.png" />
+    <Resource Include="Assets\button_l_act_up.png" />
+    <Resource Include="Assets\button_l_both.png" />
+    <Resource Include="Assets\button_l_down.png" />
+    <Resource Include="Assets\button_l_up.png" />
+    <Resource Include="Assets\button_r_act_down.png" />
+    <Resource Include="Assets\button_r_act_up.png" />
+    <Resource Include="Assets\button_r_both.png" />
+    <Resource Include="Assets\button_r_down.png" />
+    <Resource Include="Assets\button_r_up.png" />
+    <Resource Include="Assets\car.png" />
+    <Resource Include="Assets\car_back.png" />
+    <Resource Include="Assets\car_front.png" />
+    <Resource Include="Assets\car_top.png" />
+    <Resource Include="Assets\door_left.png" />
+    <Resource Include="Assets\door_right.png" />
+    <Resource Include="Assets\door_slider.png" />
+    <Resource Include="Assets\empty.png" />
+    <Resource Include="Assets\floor_back.png" />
+    <Resource Include="Assets\floor_front.png" />
+    <Resource Include="Assets\frame.png" />
+    <Resource Include="Assets\service_back.png" />
+    <Resource Include="Assets\seven_seg_0.png" />
+    <Resource Include="Assets\seven_seg_1.png" />
+    <Resource Include="Assets\seven_seg_2.png" />
+    <Resource Include="Assets\seven_seg_3.png" />
+    <Resource Include="Assets\seven_seg_4.png" />
+    <Resource Include="Assets\seven_seg_5.png" />
+    <Resource Include="Assets\seven_seg_6.png" />
+    <Resource Include="Assets\seven_seg_7.png" />
+    <Resource Include="Assets\seven_seg_8.png" />
+    <Resource Include="Assets\seven_seg_9.png" />
+    <Resource Include="Assets\top_act_down.png" />
+    <Resource Include="Assets\top_act_up.png" />
+    <Resource Include="Assets\wall.png" />
+  </ItemGroup>
+
+</Project>

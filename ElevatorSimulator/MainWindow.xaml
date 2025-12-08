@@ -1,0 +1,95 @@
+﻿<Window x:Class="ElevatorSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElevatorSimulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="781">
+    <Grid>
+        <ScrollViewer x:Name="MainScrollViewer" Margin="0,10,155,10" HorizontalScrollBarVisibility="Visible"
+              VerticalScrollBarVisibility="Visible" PreviewMouseLeftButtonDown="Scroll_PreviewMouseLeftButtonDown"
+              PreviewMouseLeftButtonUp="Scroll_PreviewMouseLeftButtonUp"
+              PreviewMouseMove="Scroll_PreviewMouseMove" PreviewMouseWheel="MainScrollViewer_PreviewMouseWheel">
+            <Grid>
+                <Canvas x:Name="MainCanvas">
+                    <Canvas.LayoutTransform>
+                        <ScaleTransform x:Name="MainCanvasScale" ScaleX="1" ScaleY="1"/>
+                    </Canvas.LayoutTransform>
+                </Canvas>
+            </Grid>
+        </ScrollViewer>
+        <Canvas x:Name="SettingsCanvas" Margin="650,10,0,10" HorizontalAlignment="Right" Width="150" Background="#FFF0F0F0">
+            <TextBlock Canvas.Left="36" TextWrapping="Wrap" Canvas.Top="21" FontWeight="Bold" TextDecorations="Underline" Text="Sim Settings" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="42" HorizontalAlignment="Center" Height="20" VerticalAlignment="Top"><Run Text="Floors:"/><LineBreak/><Run/></TextBlock>
+            <TextBlock Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="335" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.537,0.095" Height="20" Width="33" Text="Car:"/>
+            <xctk:IntegerUpDown x:Name="floorUpDown"
+                    Minimum="2"
+                    Maximum="128"
+                    Value="2"
+                    Width="60"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FormatString="F0" Canvas.Left="71" Canvas.Top="42" Text="2"/>
+            <xctk:IntegerUpDown x:Name="shaftUpDown"
+                Minimum="1"
+                Maximum="32"
+                Value="1"
+                Width="60"
+                FormatString="F0" Canvas.Left="71" Canvas.Top="67" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal" Canvas.Left="10" Canvas.Top="90">
+                <TextBlock VerticalAlignment="Center" Text="Show Walls" Width="100"/>
+                <CheckBox x:Name="showWallsBox" IsChecked="True" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Canvas.Left="10" Canvas.Top="110" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBlock Height="15" Width="100" Text="Show Frames" VerticalAlignment="Center"/>
+                <CheckBox x:Name="showFrameBox" IsChecked="True" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Canvas.Left="10" Canvas.Top="130" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120">
+                <TextBlock Height="15" Width="100" Text="Show Car Bodies" VerticalAlignment="Center"/>
+                <CheckBox x:Name="showCarsBox" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Canvas.Left="31" TextWrapping="Wrap" Canvas.Top="289" FontWeight="Bold" TextDecorations="Underline" HorizontalAlignment="Center" VerticalAlignment="Top" Width="79" Text="Manual Input"/>
+            <xctk:IntegerUpDown x:Name="manfUpDown"
+                Minimum="1"
+                Maximum="128"
+                Value="1"
+                Width="60"
+                FormatString="F0" Canvas.Left="71" Canvas.Top="310" Text="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <xctk:IntegerUpDown x:Name="mancUpDown"
+                Minimum="1"
+                Maximum="32"
+                Value="1"
+                Width="60"
+                FormatString="F0" Canvas.Left="71" Canvas.Top="335" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBlock Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="312" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.605,2.135" Width="35"><Run Text="Floor:"/><LineBreak/><Run Text=":"/></TextBlock>
+            <TextBlock Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="67" RenderTransformOrigin="0.537,0.095" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Shafts:"/><LineBreak/><Run/></TextBlock>
+            <Button x:Name="sendButton" Content="Send" Canvas.Left="27" Canvas.Top="360" RenderTransformOrigin="-0.568,-0.8" Click="Manual_Send" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="upButton" Content="Up" Canvas.Left="65" Canvas.Top="360" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Manual_Up" RenderTransformOrigin="0.397,-1.752"/>
+            <Button x:Name="downButton" Content="Down" Canvas.Left="96" Canvas.Top="360" Click="Manual_Down" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="openButton" Content="Open" Canvas.Left="28" Canvas.Top="385" Click="Manual_Open" RenderTransformOrigin="0.397,-1.752" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Button x:Name="closeButton" Content="Close" Canvas.Left="66" Canvas.Top="385" Click="Manual_Close" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.512,1.75"/>
+            <TextBlock Canvas.Left="11" TextWrapping="Wrap" Canvas.Top="198" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"><Run Text="Spawn"/><LineBreak/><Run Text="Rate:"/><LineBreak/><Run/></TextBlock>
+            <TextBlock Canvas.Left="39" TextWrapping="Wrap" Canvas.Top="177" FontWeight="Bold" TextDecorations="Underline" HorizontalAlignment="Left" VerticalAlignment="Top" Text="Agent Info."/>
+            <xctk:IntegerUpDown x:Name="spawnUpDown"
+                Minimum="0"
+                Maximum="64"
+                Value="0"
+                Width="60"
+                FormatString="F0" Canvas.Left="72" Canvas.Top="198" Text="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <ComboBox x:Name="SCANbox" Canvas.Left="11" Canvas.Top="150" Width="120">
+                <ComboBoxItem Content="Greedy SCAN" IsSelected="True"/>
+                <ComboBoxItem Content="Balanced SCAN"/>
+                <ComboBoxItem Content="Aggressive SCAN"/>
+            </ComboBox>
+            <ComboBox x:Name="spawnBox" Canvas.Left="12" Canvas.Top="222" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <ComboBoxItem Content="agents / second" IsSelected="True"/>
+                <ComboBoxItem Content="seconds / agent"/>
+            </ComboBox>
+            <TextBox x:Name="agentBox" Canvas.Left="12" TextWrapping="Wrap" Text="TextBox" Canvas.Top="246" Width="120" IsReadOnly="True"/>
+            <TextBox x:Name="timerBox" Canvas.Left="11" TextWrapping="Wrap" Text="TextBox" Canvas.Top="266" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" IsReadOnly="True"/>
+        </Canvas>
+
+    </Grid>
+</Window>
